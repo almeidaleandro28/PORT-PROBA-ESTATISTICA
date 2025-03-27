@@ -43,4 +43,19 @@ contWeatherIgnored <- (sum( weatherCodition == " Ignorado")  / contAcidents)
 # como a fase do dia afeta a ocorrência de acidentes
 dayPhase <- df$fase_dia
 contDayPhase <- table( dayPhase )
-print( contDayPhase  )
+
+dayPhaseDawn <- sum( dayPhase == "Amanhecer")
+dayPhaseDusk <- sum( dayPhase == "Anoitecer")
+dayPhaseFullNight <- sum( dayPhase == "Plena Noite" )
+dayPhaseFullDay <- sum( dayPhase == "Pleno dia")
+
+prodayPhaseDawn <- dayPhaseDawn / contAcidents
+prodayPhaseDusk <- dayPhaseDusk / contAcidents
+prodaPhaseFullNight <- dayPhaseFullNight / contAcidents
+prodayPhaseFullDay <- dayPhaseFullDay / contAcidents
+
+print(prodayPhaseDawn)
+print(prodayPhaseDusk)
+print(prodaPhaseFullNight)
+print(prodayPhaseFullDay)
+
